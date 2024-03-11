@@ -1,4 +1,5 @@
 // app.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -9,12 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/social-network', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+mongoose.connect('mongodb://localhost/social-network');
 
 // Routes
 app.use('/api/users', require('./routes/userRoutes'));
